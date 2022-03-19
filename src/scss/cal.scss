@@ -8,6 +8,17 @@
 		.cal_card_body {
 			background-color: aquamarine;
 			border-radius: 16px;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 0.2fr 0.8fr 0.2fr;
+			row-gap: 20px;
+			.cal_card_body_add_grid_here {
+				display: grid;
+				grid-template-columns: 0.1fr 1fr;
+				grid-template-rows: 1fr;
+				column-gap: 10px;
+				align-items: center;
+			}
 		}
 	}
 }
