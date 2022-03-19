@@ -12,26 +12,86 @@ function Operators({ number, setNumber }) {
 				<div className="col-3 operator_row_col_one">
 					<button
 						className="btn btn-primary"
-						onClick={() => setNumber((prev) => prev + " + ")}
+						onClick={() =>
+							setNumber((prev) => {
+								let arr = prev.split("");
+								if (
+									arr[arr.length - 1] === "/" ||
+									arr[arr.length - 1] === "+" ||
+									arr[arr.length - 1] === "-" ||
+									arr[arr.length - 1] === "*"
+								) {
+									arr[arr.length - 1] = "+";
+									let neww = arr.join("");
+									return neww;
+								}
+								return prev + "+";
+							})
+						}
 						value="plus">
 						<img src={plus} alt="+" height={50} width={50} />
 					</button>
 					<button
 						className="btn btn-primary mt-3"
 						value="-"
-						onClick={() => setNumber((prev) => prev + " - ")}>
+						onClick={() =>
+							setNumber((prev) => {
+								let arr = prev.split("");
+								if (
+									arr[arr.length - 1] === "/" ||
+									arr[arr.length - 1] === "+" ||
+									arr[arr.length - 1] === "-" ||
+									arr[arr.length - 1] === "*"
+								) {
+									arr[arr.length - 1] = "-";
+									let neww = arr.join("");
+									return neww;
+								}
+								return prev + "-";
+							})
+						}>
 						<img src={minus} alt="-" height={50} width={50} />
 					</button>
 					<button
 						className="btn btn-primary mt-3"
 						value="*"
-						onClick={() => setNumber((prev) => prev + " * ")}>
+						onClick={() =>
+							setNumber((prev) => {
+								let arr = prev.split("");
+								if (
+									arr[arr.length - 1] === "/" ||
+									arr[arr.length - 1] === "+" ||
+									arr[arr.length - 1] === "-" ||
+									arr[arr.length - 1] === "*"
+								) {
+									arr[arr.length - 1] = "*";
+									let neww = arr.join("");
+									return neww;
+								}
+								return prev + "*";
+							})
+						}>
 						<img src={mul} alt="*" height={50} width={50} />
 					</button>
 					<button
 						className="btn btn-primary mt-3"
 						value="/"
-						onClick={() => setNumber((prev) => prev + " / ")}>
+						onClick={() =>
+							setNumber((prev) => {
+								let arr = prev.split("");
+								if (
+									arr[arr.length - 1] === "/" ||
+									arr[arr.length - 1] === "+" ||
+									arr[arr.length - 1] === "-" ||
+									arr[arr.length - 1] === "*"
+								) {
+									arr[arr.length - 1] = "/";
+									let neww = arr.join("");
+									return neww;
+								}
+								return prev + "/";
+							})
+						}>
 						<img src={divide} alt="/" height={50} width={50} />
 					</button>
 				</div>

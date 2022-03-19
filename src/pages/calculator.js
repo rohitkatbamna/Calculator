@@ -6,19 +6,13 @@ import equal from "../assets/equal.png";
 function Calculatorpage() {
 	const [number, setNumber] = useState("");
 	function onEqual() {
-		const newArr = number.split(" ");
-		let one = Number(newArr[0]);
-		let two = Number(newArr[2]);
-		if (newArr[1] === "*") setNumber(one * two);
-		if (newArr[1] === "+") setNumber(one + two);
-		if (newArr[1] === "/") setNumber(one / two);
-		if (newArr[1] === "-") setNumber(one - two);
+		setNumber(eval(number));
 	}
 	return (
 		<div className="container-fluid cal_all_of_it">
 			<div className="row card cal_card col-xxl-4 col-xl-4 col-lg-5 col-md-7 col-sm-12 shadow">
 				<div className="card-body cal_card_body">
-					<input type="text" value={number} />
+					<input type="text" value={number} readOnly />
 					<div className="cal_card_body_add_grid_here">
 						<Operators number={number} setNumber={setNumber} />
 						<Numbers number={number} setNumber={setNumber} />
