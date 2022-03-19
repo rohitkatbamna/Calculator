@@ -41,14 +41,18 @@ function Signup() {
 				</div>
 			</div>
 			<div className="row login_row_two">
-				<button
-					type="button"
-					className="btn btn-primary mx-auto col-xxl-3 col-xl-3 col-lg-4 col-md-5 col-sm-5 mt-4 fs-3 fw-bold">
-					Sign Up
-				</button>
-				<p className="text-center fw-bold fs-4 mt-3">
-					Already Have Account <Link to="/">Sign In</Link>
-				</p>
+				<div className="mx-auto col-xxl-3 col-xl-3 col-lg-4 col-md-5 col-sm-5">
+					<Link to="/">
+						<button
+							type="button"
+							className="btn btn-primary  mt-4 fs-3 fw-bold">
+							Sign Up
+						</button>
+					</Link>
+					<p className="text-center fw-bold fs-4 mt-3">
+						Already Have Account <Link to="/">Sign In</Link>
+					</p>
+				</div>
 			</div>
 		</div>
 	);
