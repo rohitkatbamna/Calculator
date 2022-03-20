@@ -1,3 +1,1 @@
-# Eval ver to be fixed
-
-# 0 problem occuring
+# Use of Eval is still a problem
