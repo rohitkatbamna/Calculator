@@ -3,6 +3,7 @@ import Numbers from "../components/numbers";
 import Operators from "../components/operators";
 import "../scss/cal.scss";
 import equal from "../assets/equal.png";
+import back from "../assets/backspace.png";
 function Calculatorpage() {
 	const [number, setNumber] = useState("");
 	function onEqual() {
@@ -23,15 +24,30 @@ function Calculatorpage() {
 						</button>
 						<button
 							className="btn btn-primary fs-2"
-							value="C"
+							value="Clear"
 							onClick={() => setNumber("")}>
 							C
 						</button>
 						<button
 							className="btn btn-primary fs-2"
-							value="."
+							value="dot"
 							onClick={() => setNumber(".")}>
 							.
+						</button>
+						<button
+							className="btn btn-primary fs-2"
+							value="backspace"
+							onClick={() =>
+								setNumber((prev) => {
+									if (prev.length >= 1) {
+										let nv = prev.split("");
+										nv.pop();
+										return nv.join("");
+									}
+									return prev;
+								})
+							}>
+							<img src={back} alt="backspace" height={50} width={50} />
 						</button>
 					</div>
 				</div>
